@@ -1,0 +1,187 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+
+{% block styles %}
+
+  <style>
+      body {
+        border-top: 4px solid #483D8B;
+        /*min-height: 5000px;*/
+        /*min-width: 5000px;*/
+        background: url('{% static "img/background2.jpg" %}') no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: conver;
+        background-size: cover;
+        /*background-image: url('{% static "img/beach.jpg" %}');*/
+        /*background-image:url('https://lh4.googleusercontent.com/-FsgMNhfQLSg/AAAAAAAAAAI/AAAAAAAAaRY/3VnF3vSuWKk/photo.jpg');*/
+        /*background-repeat: repeat-x;*/
+       }
+
+      
+
+     
+     
+      
+    </style>
+
+{% endblock %}
+
+{% block content %}
+
+
+  <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron"  style='background-color: #535353;'>
+      <div class="container">
+        <div class='col-sm-6'>
+          <h1>My Oil Girls!</h1>
+          <p style='color:white;'>Discover what dōTERRA can do for you.</p>
+          <p><a class="btn btn-default btn-lg btn-block" href='#signup' role="button">Be First &raquo;</a></p>
+        </div>
+        <div class='col-sm-6'>
+          <img src="{% static 'img/doterra-essentialoil.jpg' %}" class='img-responsive' />
+          </div>
+      </div>
+    </div>
+
+
+<div class='container' style='text-align:center;color:#483D8B;' id="signup" >
+<div class='col-sm-6 col-sm-offset-3'>
+<i class="fa fa-unlock fa-5x"></i>
+  <h1>Unlock Content</h1>
+
+  <form class='form-horizontal' method="POST" action=""> {% csrf_token %}
+    <div class='form-group form-group-lg'>
+    {% if form.email.errors %}
+     {% for err in form.email.errors %}
+     <!-- <div class="alert alert-danger" role="alert">{{ err }}</div> -->
+    <div class="alert alert-danger" role="alert">Your Email is required</div>
+    {% endfor %}
+    {% endif %}
+     
+          <div class="input-group">
+        <input class='form-control' type="email" name="email" placeholder="Your email..." />
+            <span class='input-group-btn'>
+          <input type='submit' value='Join' class='btn btn-primary btn-lg' />
+          </span>
+        </div>
+    </div>
+  </form>
+  <p class='lead'>Sign up here. <br/> Get a free prize just for signing up!</p>
+</div>
+
+
+</div>
+
+ 
+<div class='row featured-row' style='background-color:#535353;'>
+  <div class='col-md-12'>
+     <div class='col-md-7'
+          <!-- 16:9 aspect ratio -->
+          <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/M7btq8eYavY" frameborder="0" allowfullscreen></iframe> -->
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/o_M4XsYaOxM" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <div class='col-md-5'>
+    <i class="fa fa-wifi"></i>
+      <h2 style='color:#b9b841'>dōTERRA Mission Statement</h2>
+        <div class="entry-content" align="left" style='color:white;'><p>We at dōTERRA are committed to sharing the life-enhancing benefits of therapeutic-grade essential oils and essential oil enhanced wellness products with the world. We will do this by:</p>
+          <ul>
+            <li>Discovering and developing the world’s highest-quality therapeutic-grade essential oil products through a leveraged network of highly-educated and experienced botanists, chemists, health scientists, and health care professionals.</li>
+            <li>Producing our essential oil products to the highest standard of quality, purity, and safety used in the industry—CPTG Certified Pure Therapeutic Grade<sup>®</sup>.</li>
+            <li>Distributing our products through Independent Product Consultants who, working from home, introduce, educate, and sell dōTERRA<sup>®</sup>&nbsp;wellness products locally through person-to-person contact and globally through personalized web shopping sites.</li>
+            <li>Providing educational opportunities for all people interested in learning how therapeutic-grade essential oils can be used as a self-care wellness alternative.</li>
+            <li>Bringing together health care professionals of traditional and alternative medicine to encourage further study and application of therapeutic-grade essential oils in modern health care practices.</li>
+          </ul>
+        </div>
+    </div>
+   </div>
+
+</div>
+
+
+
+<div class='row featured-row'>
+  <div class='col-sm-12'>
+   
+    <div class='col-sm-3'>
+    <i class="fa fa-upload fa-3x"></i>
+      <h2>Check out <a href="http://www.doterra.com/#/en">dōTERRA</a></h2>
+      <!-- <p class='lead'>
+      Some feature text goes here.
+      </p> -->
+    </div>
+    <div class='col-sm-3'>
+      <i class="fa fa-upload fa-3x"></i>
+      <h2>Feature</h2>
+      <p class='lead'>
+      Some feature text goes here.
+      </p>
+    </div>
+    <div class='col-sm-3'>
+      <i class="fa fa-upload fa-3x"></i>
+      <h2>Feature</h2>
+      <p class='lead'>
+      Some feature text goes here.
+      </p>
+    </div>
+    <div class='col-sm-3'>
+      <i class="fa fa-upload fa-3x"></i>
+      <h2>Feature</h2>
+      <p class='lead'>
+      Some feature text goes here.
+      </p>
+    </div>
+
+
+  </div>
+
+</div>
+
+<!-- <div class='row featured-row'>
+  <div class='col-sm-12'>
+    <div class='col-sm-3'>
+        <i class="fa fa-upload fa-3x"></i>
+        <h2>Feature</h2>
+        <p class='lead'>
+        Some feature text goes here.
+        </p>
+      </div>
+      <div class='col-sm-3'>
+        <i class="fa fa-upload fa-3x"></i>
+        <h2>Feature</h2>
+        <p class='lead'>
+        Some feature text goes here.
+        </p>
+      </div>
+      <div class='col-sm-3'>
+        <i class="fa fa-upload fa-3x"></i>
+        <h2>Feature</h2>
+        <p class='lead'>
+        Some feature text goes here.
+        </p>
+      </div>
+      <div class='col-sm-3'>
+        <i class="fa fa-upload fa-3x"></i>
+        <h2>Feature</h2>
+        <p class='lead'>
+        Some feature text goes here.
+        </p>
+      </div>
+    </div>
+
+</div> -->
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
